@@ -17,6 +17,7 @@ syntax: glob
 **/*.pidb
 **/Sounds.meta
 **/workspace.mel.meta
-
+**/Builds
+**/Build
 #Include these files
 !*.*.meta
