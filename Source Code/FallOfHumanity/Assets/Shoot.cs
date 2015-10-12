@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Shoot : MonoBehaviour {
 	
 	public GameObject bulletprefab;
 	float distance = 10.0f;
-	float bulletLife = 6.0f;
+	//float bulletLife = 6.0f;
 
 	void Update () {
 
