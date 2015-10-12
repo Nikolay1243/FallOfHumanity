@@ -121,9 +121,9 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Nikolay/Desktop/Files/University/KingstonUni/Year3/GameCreationProcesses/FallOfHumanity/git/fallofhumanity/Source
-    Code/FallOfHumanity/user.keystore
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/Nikolay/Desktop/Files/University/KingstonUni/Year3/GameCreationProcesses/FallOfHumanity/new
+    git/fallofhumanity/Source Code/FallOfHumanity/user.keystore
+  AndroidKeyaliasName: fallofhumanity
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 0
