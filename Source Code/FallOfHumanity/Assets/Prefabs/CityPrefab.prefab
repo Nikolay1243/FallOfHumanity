@@ -45,6 +45,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 434836}
   - 114: {fileID: 11412434}
+  - 95: {fileID: 9506552}
   m_Layer: 0
   m_Name: CityPrefab
   m_TagString: Untagged
@@ -379,8 +380,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131776}
-  m_LocalRotation: {x: -.0523359627, y: 0, z: 0, w: .99862951}
-  m_LocalPosition: {x: 3.23000002, y: -.800000012, z: -1.10000002}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.489032477, y: .119999997, z: -.741660655}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 478562}
@@ -454,7 +455,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 148780}
-  m_LocalRotation: {x: -2.00732302e-08, y: .992380798, z: -.123208627, w: -1.61679353e-07}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: -1.62920685e-07}
   m_LocalPosition: {x: 0, y: -.248810366, z: .541708946}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -865,7 +866,24 @@ Animator:
   m_GameObject: {fileID: 194848}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d84d1da2784854d41941f1474254a292, type: 2}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9506552
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131776}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bae1e0a0f0e96184294ca2946affa1dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

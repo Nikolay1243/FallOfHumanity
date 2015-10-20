@@ -12,6 +12,9 @@ public class RocketController : MonoBehaviour
 
     int score;
     int highscore;
+
+    public AudioClip explosionSound;
+
     void Start()
     {
         scoreText.text = "0";
@@ -92,6 +95,11 @@ public class RocketController : MonoBehaviour
             {
                 score += 10;
                 scoreText.text = score.ToString();
+
+                rocket.GetComponent<AudioSource>().clip=explosionSound;
+                rocket.GetComponent<AudioSource>().Play();
+
+
                 Debug.Log("Got To point(" + rocket.transform.position + ")");
             }
 

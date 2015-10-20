@@ -145,6 +145,7 @@ MonoBehaviour:
   - {fileID: 1420899398}
   scoreText: {fileID: 1050447763}
   highScoreText: {fileID: 926288819}
+  explosionSound: {fileID: 8300000, guid: 40dd2063ca9af31439ff5afed481e6d0, type: 3}
 --- !u!1 &140316280
 GameObject:
   m_ObjectHideFlags: 0
