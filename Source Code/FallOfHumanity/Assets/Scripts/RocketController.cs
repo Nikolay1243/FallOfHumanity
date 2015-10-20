@@ -9,6 +9,7 @@ public class RocketController : MonoBehaviour
     public GameObject[] rocketHills;
     public Text scoreText;
     public Text highScoreText;
+	public CameraShake cameraShakeScript;
 
     int score;
     int highscore;
@@ -60,6 +61,7 @@ public class RocketController : MonoBehaviour
 
         if (clickposition.y >= -1.5f)
         {
+			cameraShakeScript.shake = 1.0f;
             if (clickposition.x < -4)
                 StartCoroutine(FireRocket(rocketHills[0], rocketHills[0].transform, clickposition, 1.0f));
             else if (clickposition.x > -4 && clickposition.x < 4)
