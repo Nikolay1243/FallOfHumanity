@@ -86,7 +86,7 @@ public class RocketController : MonoBehaviour
         float t = 0.0f;
 
         totalDistance = Vector3.Distance(startMarker.position, endMarker);
-        while (t <= 1.0f)
+        while (t <= 1.0f&& rocket!=null)
         {
             t += Time.deltaTime * (Time.timeScale / speed);
             rocket.transform.position = Vector3.Lerp(startMarker.transform.position, endMarker, (float)t);
