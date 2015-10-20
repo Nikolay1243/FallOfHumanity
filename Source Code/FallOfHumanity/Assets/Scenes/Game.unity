@@ -145,7 +145,11 @@ MonoBehaviour:
   - {fileID: 1420899398}
   scoreText: {fileID: 1050447763}
   highScoreText: {fileID: 926288819}
+<<<<<<< HEAD
   explosionSound: {fileID: 8300000, guid: 40dd2063ca9af31439ff5afed481e6d0, type: 3}
+=======
+  cameraShakeScript: {fileID: 314553241}
+>>>>>>> c958c0492c04f6570696bf7fc9ef6fa13731e3cf
 --- !u!1 &140316280
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +343,7 @@ GameObject:
   - 124: {fileID: 314553236}
   - 81: {fileID: 314553235}
   - 114: {fileID: 314553240}
+  - 114: {fileID: 314553241}
   m_Layer: 0
   m_Name: Game Camera
   m_TagString: MainCamera
@@ -432,6 +437,21 @@ MonoBehaviour:
   m_MinZ: .00999999978
   m_SSAOShader: {fileID: 4800000, guid: 43ca18288c424f645aaa1e9e07f04c50, type: 3}
   m_RandomTexture: {fileID: 2800000, guid: a181ca8e3c62f3e4b8f183f6c586b032, type: 3}
+--- !u!114 &314553241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314553234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5fb3bbf45249a54f9d57fdb0399b358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 314553239}
+  shake: 0
+  shakeAmount: .699999988
+  decreaseFactor: 1
 --- !u!1 &354112555
 GameObject:
   m_ObjectHideFlags: 0
