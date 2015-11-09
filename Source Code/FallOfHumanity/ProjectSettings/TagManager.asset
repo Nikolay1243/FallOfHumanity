@@ -5,9 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
-  - New Tag
   - Fire
   - Scripts
+  - MouseCam
+  - City
+  - Silo
+  - RocketHills
+  - Plane
+  - Satellite
+  - Missile
+  - Flyer
   layers:
   - Default
   - TransparentFX
@@ -44,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Particle
+    uniqueID: 3644415519
     locked: 0

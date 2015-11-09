@@ -10,13 +10,15 @@ GameObject:
   - 4: {fileID: 471910}
   - 33: {fileID: 3384058}
   - 23: {fileID: 2344282}
-  - 95: {fileID: 9512814}
   - 96: {fileID: 9649606}
   - 54: {fileID: 5458932}
   - 65: {fileID: 6576224}
+  - 95: {fileID: 9598774}
+  - 114: {fileID: 11408018}
+  - 114: {fileID: 11457986}
   m_Layer: 0
   m_Name: EnemyMissile
-  m_TagString: Untagged
+  m_TagString: Missile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,8 +30,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169182}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: -9.52999973, y: 9.56000042, z: -.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -9.52999973, y: 18.6690006, z: -.5}
+  m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,7 +45,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: ad092b97e299bd144a8d802fb9682106, type: 2}
+  - {fileID: 2100000, guid: e1e9f3d404dac4345a90928efea5b64d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -91,7 +93,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .240926743, y: .241418198, z: .975157678}
   m_Center: {x: -.000488866121, y: .000511646213, z: .0968538672}
---- !u!95 &9512814
+--- !u!95 &9598774
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -99,8 +101,8 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169182}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2995b363da0c29e4397bbc08d284d801, type: 3}
-  m_Controller: {fileID: 0}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c4b84f8405e35c842a833b009e5d8fa7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -118,7 +120,7 @@ TrailRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: f63c576739a709747a1a571260d4fabd, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -132,27 +134,49 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 3
-  m_StartWidth: 0
+  m_Time: 100
+  m_StartWidth: .100000001
   m_EndWidth: .300000012
   m_Colors:
     m_Color[0]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4278190335
     m_Color[1]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4278190335
     m_Color[2]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4278190335
     m_Color[3]:
       serializedVersion: 2
-      rgba: 4294967295
+      rgba: 4279238911
     m_Color[4]:
       serializedVersion: 2
-      rgba: 16777215
+      rgba: 255
   m_MinVertexDistance: .100000001
   m_Autodestruct: 0
+--- !u!114 &11408018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a9d75c62c3b4245a2cf7cf4be1b328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11457986
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 169182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3d08c2bc0f8af4885da549e2a16863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -1,29 +1,40 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class Score : MonoBehaviour {
+using UnityEngine.UI;
+public class Score : MonoBehaviour 
+{
 	int score;
-	// Use this for initialization
-	void Start () {
+    int highscore;
+
+    public Text scoreText;
+    public Text highScoreText;
+
+	void Start () 
+    {
 
 		score = 0;
-
+        scoreText.text = score.ToString();
+        highscore = PlayerPrefs.GetInt("HighScore");
 	}
 	
-	// Update is called once per frame
 	void Update () 
 	{
-		PlayerPrefs.SetInt("Player Score", score);
-
-		if (score < 0) {
-			score = 0;
-		}
-
-
-
+        UpdateScore();
 	}
 
-	void ChangeScore(int amount)
+
+    void UpdateScore()
+    {
+        if (score > highscore)
+            highscore = score;
+        PlayerPrefs.SetInt("Score", score);
+        PlayerPrefs.SetInt("HighScore", highscore);
+
+        highScoreText.text = highscore.ToString();
+        scoreText.text = score.ToString();
+    }
+
+	public void ChangeScore(int amount)
 	{
 		score += amount;
 	}

@@ -6,68 +6,111 @@ public class MissileController : MonoBehaviour {
     public GameObject missilePrefab;
     public List<GameObject> missileList;
 
-    public GameObject[] citiesArray;
+    public GameObject[] targetsArray;
+
+    public DigitalRuby.PyroParticles.MakeExplosion explosionScript;
+    public DigitalRuby.PyroParticles.MakeFire fireScript;
+
+    public RocketController rockContScript;
 
 	void Start () 
     {
 
         missileList = new List<GameObject>();
-
-        for (int i = 0; i < 5;i++ )
-        {
-            missileList.Add ( (GameObject)Instantiate(missilePrefab, new Vector3((i * 3f) - 6, 6.5f, -0.5f), Quaternion.identity));
-        }
-
-        PointToTarget();
-        
+        StartCoroutine(SpawnMissiles());
 
 	}
+    void CheckIfHitTarget()
+    {
+        foreach (GameObject curmiss in missileList)
+        {
+            if (curmiss != null)
+            {
+                
+            }
+        }
+    }
+
+    IEnumerator SpawnMissiles()
+    {
+        while (0 == 0)
+        {
+            int randomwait = Random.Range(3,5);//3,5
+
+            yield return new WaitForSeconds(randomwait);
+            CreateMissile();
+        }
+        
+    }
+    
+
+    void CreateMissile()
+    {
+        //-8 and +8
+        float randomX = Random.Range(-8f, 9.0f);
+        GameObject newMissile = (GameObject)Instantiate(missilePrefab, new Vector3(randomX, 6.5f, -0.5f), Quaternion.identity);
+
+        missileList.Add(newMissile);
+
+        PointToTarget(newMissile);
+        //CheckIfHitTarget();
+       
+
+    }
 	
 	void Update () 
     {
-        foreach (GameObject curmiss in missileList)
-        {
-            Vector3 forward = curmiss.transform.TransformDirection(Vector3.forward) * 20;
-            Debug.DrawRay(curmiss.transform.position, forward, Color.green);
-        }
+        
 	}
+
+    void DeleteMissile(GameObject theMissile)
+    {
+      
+    }
     
-    void PointToTarget()
+    void PointToTarget(GameObject tarmiss)
     {
-        foreach (GameObject curmiss in missileList)
+        int randomtarget = 0;
+        if(rockContScript.OutOfRockets())
         {
-            int randomcity=Random.Range(0, citiesArray.Length);
-            curmiss.transform.LookAt(citiesArray[randomcity].transform);
-            Vector3 forward = curmiss.transform.TransformDirection(Vector3.forward) * 10;
-            Debug.DrawRay(curmiss.transform.position, forward, Color.green);
+            if (targetsArray[0].GetComponentInParent<PHealth>().damage == 3 && targetsArray[1].GetComponentInParent<PHealth>().damage < 3)
+                randomtarget = 1;
 
-            StartCoroutine(MoveTowardsTarget(curmiss, curmiss.transform, citiesArray[randomcity].transform.position, 10000.0f));
+            if (targetsArray[1].GetComponentInParent<PHealth>().damage == 3 && targetsArray[0].GetComponentInParent<PHealth>().damage < 3)
+                randomtarget = 0;
         }
-    }
-
-    void MoveTowardsTarget()
-    {
-        foreach (GameObject curmiss in missileList)
+        else
         {
-            int randomcity = Random.Range(0, citiesArray.Length);
-            curmiss.transform.LookAt(citiesArray[randomcity].transform);
-            Vector3 forward = curmiss.transform.TransformDirection(Vector3.forward) * 10;
-            Debug.DrawRay(curmiss.transform.position, forward, Color.green);
+            randomtarget=Random.Range(0, targetsArray.Length);
         }
-    }
-
-
-    IEnumerator MoveTowardsTarget(GameObject missile, Transform startMarker, Vector3 endMarker, float speed = 1.0F)
-    {
-        float totalDistance;
-        float t = 0.0f;
-
-        totalDistance = Vector3.Distance(startMarker.position, endMarker);
-        while (t <= 1.0f&&missile!=null)
-        {
             
-            t += Time.deltaTime * (Time.timeScale / speed);
-            missile.transform.position = Vector3.Lerp(startMarker.transform.position, endMarker, (float)t);
+
+
+
+        tarmiss.transform.LookAt(targetsArray[randomtarget].transform);
+        StartCoroutine(MoveTowardsTarget(tarmiss, tarmiss.transform.position, targetsArray[randomtarget], 20000.0f));
+        
+    }
+
+
+    IEnumerator MoveTowardsTarget(GameObject missile, Vector3 startMarker, GameObject endMarker, float speed = 1.0F)
+    {  
+        float t = 0.0f;
+        while (t < 1.0f&&missile!=null)
+        {
+            t += Time.time * (1 / speed);
+            missile.transform.position = Vector3.Lerp(startMarker, endMarker.transform.position, (float)t);
+
+            if(missile.transform.position==endMarker.transform.position)//Missile got to target
+            {
+                //Debug.Log(missile + " got to " + endMarker);
+                missile.GetComponent<MissileHitTarget>().GotToTarget(endMarker);
+                explosionScript.CreateExplosion(endMarker.transform.position);
+                fireScript.CreateFire(endMarker.transform.position);
+
+                missileList.Remove(missile);
+                Destroy(missile);
+            }
             yield return 0;
         }
     }

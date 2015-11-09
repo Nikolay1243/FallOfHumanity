@@ -11,9 +11,11 @@ GameObject:
   - 33: {fileID: 3346926}
   - 23: {fileID: 2301150}
   - 95: {fileID: 9534814}
+  - 65: {fileID: 6568220}
+  - 54: {fileID: 5478636}
   m_Layer: 0
   m_Name: satellite
-  m_TagString: Untagged
+  m_TagString: Satellite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,9 +26,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156294}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.98999977, y: 3.2342, z: -4.048141}
-  m_LocalScale: {x: 3.4211216, y: 8.89715481, z: 3.4211216}
+  m_LocalRotation: {x: .255220532, y: .372491598, z: .000848790514, w: .892251015}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 3.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -61,6 +63,33 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156294}
   m_Mesh: {fileID: 4300000, guid: aa02f004c884ea84b9aa91d3e8b61113, type: 3}
+--- !u!54 &5478636
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156294}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &6568220
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.53999996, y: .419999987, z: .910000026}
+  m_Center: {x: 1.1641869e-07, y: .0108892778, z: .047371041}
 --- !u!95 &9534814
 Animator:
   serializedVersion: 3

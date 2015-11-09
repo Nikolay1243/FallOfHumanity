@@ -260,6 +260,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     2: Shooter
     7: Shooter
+    17: 1
   metroPackageName: FallOfHumanity
   metroPackageLogo: 
   metroPackageLogo140: 
